@@ -38,12 +38,10 @@ class Content extends Component {
             <main>
             <div>
             <Container maxWidth="sm">
-                <Typography variant="h5" align="center" color="textSecondary" paragraph>
-                Something short and leading about the collection below—its contents, the creator, etc.
-                Make it short and sweet, but not too short so folks don&apos;t simply skip over it
-                entirely.
+                <Typography variant="h4" align="center" color="textSecondary" paragraph>
+                    Build Bridge between Students and Non-profit Organization
                 </Typography>
-                <div>
+                {/* <div>
                 <Grid container spacing={2} justify="center">
                     <Grid item>
                     <Button variant="contained" color="primary">
@@ -56,9 +54,10 @@ class Content extends Component {
                     </Button>
                     </Grid>
                 </Grid>
-                </div>
+                </div> */}
             </Container>
             </div>
+
             <Container maxWidth="md">
             {/* End hero unit */}
             <Grid container spacing={4}>
