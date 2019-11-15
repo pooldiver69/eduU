@@ -35,7 +35,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   paper: {
-    marginTop: theme.spacing(20),
+    marginTop: theme.spacing(15),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -96,9 +96,6 @@ export default function SignUp(props) {
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
-
-
-
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
