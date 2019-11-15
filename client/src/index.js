@@ -8,6 +8,7 @@ import SignIn from './components/auth/sign'
 import Home from './components/home/home';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import profile from './components/profile/profile';
+import Register from './components/auth/reg'
 
 const routing = (
     <Router>
@@ -16,7 +17,7 @@ const routing = (
             {/* <Route exact path="/" component={App} /> */}
             <Route path="/" component={Home} exact />
             <Route path="/sign" component={SignIn} exact />
-
+            <Route path="/register" component={Register} exact />
             <Route path="/profile" component={profile} exact />
             {/* <Route path="/signup" component={SignUp} />  */}
             {/* <Route path="/" component={Home} /> */}

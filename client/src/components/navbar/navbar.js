@@ -1,9 +1,12 @@
 import React from 'react';
+import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+
 
 class Navigation extends React.Component {
     render() {
         return (
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <Route>
                 <a className="navbar-brand" href="/">EduU</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -24,13 +27,14 @@ class Navigation extends React.Component {
                     </form>
                     <ul className="navbar-nav my-2 my-lg-0">
                         <li className="nav-item">
-                            <a className="nav-link" href="/">Sign in</a>
+                            <Link to="sign" className="nav-link">Sign In</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/">Sign up</a>
+                        <Link to="register" className="nav-link">Sign Up</Link>
                         </li>
                     </ul>
                 </div>
+            </Route>
             </nav>
         )
     }
