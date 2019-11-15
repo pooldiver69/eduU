@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Content from '../content/content';
+import Navigation from '../navbar/navbar';
 
 class Home extends Component {
   render() {
