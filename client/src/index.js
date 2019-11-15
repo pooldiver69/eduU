@@ -13,8 +13,8 @@ const routing = (
         <div>
             {/* <UserTest /> <DashBoard />
             {/* <Route exact path="/" component={App} /> */}
+            <Route exact path="/" component={Home} />
             <Route path="/sign" component={SignIn} />
-            <Route path="/" component={Home} />
             {/* <Route path="/signup" component={SignUp} />  */}
             {/* <Profile /> */}
             {/* <Earning /> */}
