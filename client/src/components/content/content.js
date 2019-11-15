@@ -40,28 +40,13 @@ class Content extends Component {
                 <main>
                     <div className="hero-image">
                         <Container className="hero-content" maxWidth="sm" >
-                            <Typography variant="h4" align="center" paragraph>
-                                Something short and leading about the collection below—its contents, the creator, etc.
-                                Make it short and sweet, but not too short so folks don&apos;t simply skip over it
-                                entirely.
+                            <Typography className="hero-text" align="center" font-size="12px" paragraph>
+                                The bridge connect students and non-profit organization
                             </Typography>
-                            <div>
-                                <Grid container spacing={2} justify="center">
-                                    <Grid item>
-                                        <Button variant="contained" color="primary">
-                                            Main call to action
-                                        </Button>
-                                    </Grid>
-                                    <Grid item>
-                                        <Button variant="outlined" color="primary">
-                                            Secondary action
-                                        </Button>
-                                    </Grid>
-                                </Grid>
-                            </div>
+
                         </Container>
                     </div>
-                    <Container maxWidth="md">
+                    <Container className="main-content" maxWidth="md">
                         {/* End hero unit */}
                         <Grid container spacing={4}>
                             {cards.map(card => (
