@@ -19,6 +19,7 @@
     text-align: center;
     padding: 3em;
     color: #ffffff;
+    font-size: 40px;
 }
 
 .main-content {
@@ -26,6 +27,5 @@
 }
 
 .hero-text{
-    letter-spacing: 0.3em;
     font-size: 30px;
 }

@@ -40,9 +40,7 @@ class Content extends Component {
                 <main>
                     <div className="hero-image">
                         <Container className="hero-content" maxWidth="sm" >
-                            <Typography className="hero-text" align="center" font-size="12px" paragraph>
-                                The bridge connect students and non-profit organization
-                            </Typography>
+                            <p className="hero-text">The bridge connect students and non-profit organization</p>
 
                         </Container>
                     </div>
