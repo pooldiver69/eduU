@@ -27,10 +27,10 @@ class Navigation extends React.Component {
                     </form>
                     <ul className="navbar-nav my-2 my-lg-0">
                         <li className="nav-item">
-                            <Link to="sign" className="nav-link">Sign in</Link>
+                            <Link to="sign" className="nav-link">Sign In</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/">Sign up</a>
+                        <Link to="register" className="nav-link">Sign Up</Link>
                         </li>
                     </ul>
                 </div>
