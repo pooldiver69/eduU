@@ -7,7 +7,7 @@ class Home extends Component {
     return (
       <div className="home">
         <header className="home-header">
-          {/* <NavBar /> */}
+          <Navigation />
         </header>
         <content>
           <Content />

@@ -16,7 +16,6 @@ const routing = (
             <Route path="/sign" component={SignIn} />
             <Route path="/" component={Home} />
             {/* <Route path="/signup" component={SignUp} />  */}
-            <Route path="/" component={Home} />
             {/* <Profile /> */}
             {/* <Earning /> */}
             {/* <Manage /> */}

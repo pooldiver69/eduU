@@ -35,16 +35,7 @@ class Content extends Component {
         return (
             <React.Fragment>
             <CssBaseline />
-            <AppBar position="relative">
-                <Toolbar>
-                <CameraIcon />
-                <Typography variant="h6" color="inherit" noWrap>
-                    Album layout
-                </Typography>
-                </Toolbar>
-            </AppBar>
             <main>
-            {/* Hero unit */}
             <div>
             <Container maxWidth="sm">
                 <Typography variant="h5" align="center" color="textSecondary" paragraph>
@@ -100,17 +91,6 @@ class Content extends Component {
             </Grid>
             </Container>
         </main>
-        {/* Footer */}
-        <footer>
-            <Typography variant="h6" align="center" gutterBottom>
-            Footer
-            </Typography>
-            <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-            Something here to give the footer a purpose!
-            </Typography>
-            <Copyright />
-        </footer>
-        {/* End footer */}
         </React.Fragment>
     );
     }
