@@ -5,6 +5,8 @@ import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import SignIn from './components/auth/sign'
+import Home from './components/home/home';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 const routing = (
     <Router>
@@ -13,7 +15,7 @@ const routing = (
             {/* <Route exact path="/" component={App} /> */}
             <Route path="/sign" component={SignIn} />
             {/* <Route path="/signup" component={SignUp} />  */}
-            {/* <Home /> */}
+            <Route path="/" component={Home} />
             {/* <Profile /> */}
             {/* <Earning /> */}
             {/* <Manage /> */}
