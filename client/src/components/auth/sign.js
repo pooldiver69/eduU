@@ -87,52 +87,54 @@ export default function SignIn(props) {
           Sign in
         </Typography>
         <form className={classes.form} onSubmit={handleSubmit}>
-          <Grid item xs={12}>
-            <TextField
-              variant="outlined"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              type="email"
-              value={fields.email}
-              onChange={handleFieldChange}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              variant="outlined"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              onChange={handleFieldChange}
-              value={fields.password}
-            />
-          </Grid>
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-            disabled={!validateForm()}
-          >
-            Sign In
-          </Button>
-          <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
-              </Link>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="email"
+                label="Email Address"
+                name="email"
+                type="email"
+                value={fields.email}
+                onChange={handleFieldChange}
+              />
             </Grid>
-            <Grid item>
-              <Link href="register" variant="body2">
-                {"Don't have an account? Sign Up"}
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                name="password"
+                label="Password"
+                type="password"
+                id="password"
+                onChange={handleFieldChange}
+                value={fields.password}
+              />
+            </Grid>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+              disabled={!validateForm()}
+            >
+              Sign In
+          </Button>
+            <Grid container>
+              <Grid item xs>
+                <Link href="#" variant="body2">
+                  Forgot password?
               </Link>
+              </Grid>
+              <Grid item>
+                <Link href="register" variant="body2">
+                  {"Don't have an account? Sign Up"}
+                </Link>
+              </Grid>
             </Grid>
           </Grid>
         </form>
