@@ -7,15 +7,19 @@ import * as serviceWorker from './serviceWorker';
 import SignIn from './components/auth/sign'
 import Home from './components/home/home';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import profile from './components/profile/profile';
 
 const routing = (
     <Router>
         <div>
             {/* <UserTest /> <DashBoard />
             {/* <Route exact path="/" component={App} /> */}
-            <Route exact path="/" component={Home} />
-            <Route path="/sign" component={SignIn} />
+            <Route path="/" component={Home} exact />
+            <Route path="/sign" component={SignIn} exact />
+
+            <Route path="/profile" component={profile} exact />
             {/* <Route path="/signup" component={SignUp} />  */}
+            {/* <Route path="/" component={Home} /> */}
             {/* <Profile /> */}
             {/* <Earning /> */}
             {/* <Manage /> */}
