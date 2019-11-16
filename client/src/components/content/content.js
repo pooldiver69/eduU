@@ -50,24 +50,21 @@ class Content extends Component {
                             {cards.map(card => (
                                 <Grid item key={card} xs={12} sm={6} md={4}>
                                     <Card>
-                                        <CardMedia
-                                            image="https://source.unsplash.com/random"
+                                        <CardMedia className="card-media"
+                                            image="http://www.personal.psu.edu/users/n/y/nys5290/Project-Image.jpg"
                                             title="Image title"
                                         />
                                         <CardContent>
                                             <Typography gutterBottom variant="h5" component="h2">
-                                                Heading
+                                                Project Title
                                             </Typography>
                                             <Typography>
-                                                This is a media card. You can use this section to describe the content.
+                                                Project description
                                             </Typography>
                                         </CardContent>
                                         <CardActions>
                                             <Button size="small" color="primary">
                                                 View
-                                            </Button>
-                                            <Button size="small" color="primary">
-                                                Edit
                                             </Button>
                                         </CardActions>
                                     </Card>
