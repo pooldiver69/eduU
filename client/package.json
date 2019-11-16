@@ -10,6 +10,7 @@
     "google-maps-react": "^2.0.2",
     "mdreact": "^0.1.5",
     "react": "^16.12.0",
+    "react-bootstrap": "^1.0.0-beta.14",
     "react-dependent-script": "^1.1.2",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",

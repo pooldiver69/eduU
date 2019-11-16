@@ -10,6 +10,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import profile from './components/profile/profile';
 import Register from './components/auth/reg'
 
+
 const routing = (
     <Router>
         <div>
