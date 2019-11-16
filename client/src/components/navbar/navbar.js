@@ -1,6 +1,7 @@
 import React from 'react';
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
-import Firebase from '../../firebaseConfig'
+import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
+import SearchBar from '../searchBar/searchBar';
+import Firebase from '../../firebaseConfig';
 
 class Navigation extends React.Component {
 
@@ -63,7 +64,7 @@ class Navigation extends React.Component {
                             </li>
                         </ul>
                         <form className="form-inline my-2 my-lg-0">
-                            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+                            <SearchBar />
                             <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                         </form>
                         {this.authNavbar()}
