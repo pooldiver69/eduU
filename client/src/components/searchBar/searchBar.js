@@ -35,7 +35,9 @@ class SearchBar extends React.Component {
                 placeholder="Search"
             >
             </input>
+            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </div>
+        
     );
   }
 }

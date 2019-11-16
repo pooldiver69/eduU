@@ -65,7 +65,6 @@ class Navigation extends React.Component {
                         </ul>
                         <form className="form-inline my-2 my-lg-0">
                             <SearchBar />
-                            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                         </form>
                         {this.authNavbar()}
                     </div>
