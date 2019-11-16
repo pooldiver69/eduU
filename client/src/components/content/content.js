@@ -15,6 +15,7 @@ import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 import style from './content.css';
 import './content.css';
+import { Modal } from 'react-bootstrap';
 
 
 function Copyright() {
@@ -30,9 +31,43 @@ function Copyright() {
     );
 }
 
+function MyVerticallyCenteredModal(props) {
+    console.log(props)
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header closeButton>
+                <Modal.Title id="contained-modal-title-vcenter">
+                    Modal heading
+          </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <h4>Centered Modal</h4>
+                <p>
+                </p>
+            </Modal.Body>
+            <Modal.Footer>
+                <Button onClick={props.onHide}>Close</Button>
+            </Modal.Footer>
+        </Modal>
+    );
+}
+
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 class Content extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            modalShow: false,
+            data: {},
+        }
+    }
     render() {
         return (
             <React.Fragment>
@@ -63,7 +98,7 @@ class Content extends Component {
                                             </Typography>
                                         </CardContent>
                                         <CardActions>
-                                            <Button size="small" color="primary">
+                                            <Button size="small" color="primary" onClick={() => this.setState({modalShow: true, data: card})}>
                                                 View
                                             </Button>
                                         </CardActions>
@@ -72,6 +107,10 @@ class Content extends Component {
                             ))}
                         </Grid>
                     </Container>
+                    <MyVerticallyCenteredModal
+                        show={this.state.modalShow}
+                        onHide={() => this.setState({modalShow: false})}
+                    />
                 </main>
             </React.Fragment>
         );
