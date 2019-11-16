@@ -14,8 +14,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 import style from './content.css';
-import './content.css';
-
 
 function Copyright() {
     return (
@@ -40,7 +38,7 @@ class Content extends Component {
                 <main>
                     <div className="hero-image">
                         <Container className="hero-content" maxWidth="sm" >
-                            <Typography className="hero-text" align="center" font-size="12px" paragraph>
+                            <Typography className="hero-text" align="center" paragraph>
                                 The bridge connect students and non-profit organization
                             </Typography>
 
