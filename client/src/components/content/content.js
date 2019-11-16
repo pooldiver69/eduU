@@ -14,8 +14,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 import style from './content.css';
-import './content.css';
-
 
 function Copyright() {
     return (
