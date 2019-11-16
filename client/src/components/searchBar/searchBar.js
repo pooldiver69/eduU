@@ -1,43 +1,43 @@
 import React, { Component } from "react";
-// import { Map, GoogleApiWrapper } from 'google-maps-react';
 /* global google */
 
 class SearchBar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.autocompleteInput = React.createRef();
-    this.autocomplete = null;
-    this.handlePlaceChanged = this.handlePlaceChanged.bind(this);
-  }
+    constructor(props) {
+        super(props);
+        this.autocompleteInput = React.createRef();
+        this.autocomplete = null;
+        this.handlePlaceChanged = this.handlePlaceChanged.bind(this);
+    }
 
-  componentDidMount() {
-    // const google = window.google;
-    // console.log(google);
-    this.autocomplete = new google.maps.places.Autocomplete(
-      this.autocompleteInput.current,
-      { types: ["geocode"] }
-    );
+    componentDidMount() {
+        this.autocomplete = new google.maps.places.Autocomplete(
+        this.autocompleteInput.current,
+        { types: ["geocode"] }
+        );
 
-    this.autocomplete.addListener("place_changed", this.handlePlaceChanged);
-  }
+        this.autocomplete.addListener("place_changed", this.timeout);
+    }
 
-  handlePlaceChanged() {
-    const place = this.autocomplete.getPlace();
-    this.props.onPlaceLoaded(place);
-  }
+    handlePlaceChanged() {
+        const place = this.autocomplete.getPlace();
+        this.props.onPlaceLoaded(place);
+    }
 
   render() {
     return (
-      <div>
-        <input
-          ref={this.autocompleteInput}
-          id="autocomplete"
-          placeholder="Enter your address"
-          className="form-control mr-sm-2"
-          type="search"
-          placeholder="Search"
-        ></input>
-      </div>
+        <div>
+            <input
+                ref={this.autocompleteInput}
+                id="autocomplete"
+                placeholder="Enter your address"
+                className="form-control mr-sm-2"
+                type="search"
+                placeholder="Search"
+            >
+            </input>
+            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </div>
+        
     );
   }
 }
