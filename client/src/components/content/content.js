@@ -16,6 +16,7 @@ import Link from '@material-ui/core/Link';
 import style from './content.css';
 import './content.css';
 import { Modal } from 'react-bootstrap';
+import data from '../../module/data.json'
 
 function Copyright() {
     return (
@@ -42,21 +43,37 @@ function MyVerticallyCenteredModal(props) {
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    Modal heading
+                    {props.item.title}
           </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <h4>Centered Modal</h4>
                 <p>
+                    {props.item.description}
                 </p>
+                <p>
+                    {props.item.skill}
+                </p>
+                <h4>Application</h4>
+                <form>
+                    <label>First name</label>
+                    <input placeholder="first name"></input>
+                    <label>Last name</label>
+                    <input placeholder='last name'></input> <br></br>
+                    <label>Select image to upload:</label> <br></br>
+                    <input type="file" name="fileToUpload" id="fileToUpload" />
+                </form>
             </Modal.Body>
             <Modal.Footer>
+                <Button onClick={applicationSubmit}>Submit</Button>
                 <Button onClick={props.onHide}>Close</Button>
             </Modal.Footer>
         </Modal>
     );
 }
 
+function applicationSubmit() {
+    alert("Application submit success")
+}
 
 class Content extends Component {
 
@@ -64,26 +81,10 @@ class Content extends Component {
         super(props);
         this.state = {
             modalShow: false,
-            data: {},
-            dataIsLoaded: false
+            data,
+            dataIsLoaded: true,
+            currentData: ''
         }
-    }
-
-    componentDidMount() {
-        console.log("enter did mount")
-        return fetch('../module/data.json')
-            .then((res) => {
-                console.log(res)
-                res.json()
-            })
-            .then((data) => {
-                console.log('data:', data);
-                this.setState({ dataIsLoaded: true })
-                console.log(this.state)
-            })
-            .catch(err => {
-                alert(err.message)
-            })
     }
 
     render() {
@@ -110,14 +111,14 @@ class Content extends Component {
                                             />
                                             <CardContent>
                                                 <Typography gutterBottom variant="h5" component="h2">
-                                                    Project Title
+                                                    {card.title}
                                                 </Typography>
                                                 <Typography>
-                                                    Project description
+                                                    {card.short}
                                                 </Typography>
                                             </CardContent>
                                             <CardActions>
-                                                <Button size="small" color="primary" onClick={() => this.setState({ modalShow: true, data: card })}>
+                                                <Button size="small" color="primary" onClick={() => this.setState({ modalShow: true, currentData: card })}>
                                                     View
                                                 </Button>
                                             </CardActions>
@@ -129,6 +130,7 @@ class Content extends Component {
                         <MyVerticallyCenteredModal
                             show={this.state.modalShow}
                             onHide={() => this.setState({ modalShow: false })}
+                            item={this.state.currentData}
                         />
                     </main>
                 </React.Fragment>
