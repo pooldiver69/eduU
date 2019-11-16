@@ -17,7 +17,6 @@ import style from './content.css';
 import './content.css';
 import { Modal } from 'react-bootstrap';
 
-
 function Copyright() {
     return (
         <Typography variant="body2" color="textSecondary" align="center">
@@ -33,6 +32,7 @@ function Copyright() {
 
 function MyVerticallyCenteredModal(props) {
     console.log(props)
+    console.log(props.state)
     return (
         <Modal
             {...props}
@@ -57,7 +57,6 @@ function MyVerticallyCenteredModal(props) {
     );
 }
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 class Content extends Component {
 
@@ -66,54 +65,90 @@ class Content extends Component {
         this.state = {
             modalShow: false,
             data: {},
+            dataIsLoaded: false
         }
     }
-    render() {
-        return (
-            <React.Fragment>
-                <CssBaseline />
-                <main>
-                    <div className="hero-image">
-                        <Container className="hero-content" maxWidth="sm" >
-                            <p className="hero-text">The bridge connect students and non-profit organization</p>
 
+    componentDidMount() {
+        console.log("enter did mount")
+        return fetch('../module/data.json')
+            .then((res) => {
+                console.log(res)
+                res.json()
+            })
+            .then((data) => {
+                console.log('data:', data);
+                this.setState({ dataIsLoaded: true })
+                console.log(this.state)
+            })
+            .catch(err => {
+                alert(err.message)
+            })
+    }
+
+    render() {
+        if (this.state.dataIsLoaded) {
+            return (
+                <React.Fragment>
+                    <CssBaseline />
+                    <main>
+                        <div className="hero-image">
+                            <Container className="hero-content" maxWidth="sm" >
+                                <p className="hero-text">The bridge connect students and non-profit organization</p>
+
+                            </Container>
+                        </div>
+                        <Container className="main-content" maxWidth="md">
+                            {/* End hero unit */}
+                            <Grid container spacing={4}>
+                                {this.state.data.map(card => (
+                                    <Grid item key={card} xs={12} sm={6} md={4}>
+                                        <Card>
+                                            <CardMedia className="card-media"
+                                                image="http://www.personal.psu.edu/users/n/y/nys5290/Project-Image.jpg"
+                                                title="Image title"
+                                            />
+                                            <CardContent>
+                                                <Typography gutterBottom variant="h5" component="h2">
+                                                    Project Title
+                                                </Typography>
+                                                <Typography>
+                                                    Project description
+                                                </Typography>
+                                            </CardContent>
+                                            <CardActions>
+                                                <Button size="small" color="primary" onClick={() => this.setState({ modalShow: true, data: card })}>
+                                                    View
+                                                </Button>
+                                            </CardActions>
+                                        </Card>
+                                    </Grid>
+                                ))}
+                            </Grid>
                         </Container>
-                    </div>
-                    <Container className="main-content" maxWidth="md">
-                        {/* End hero unit */}
-                        <Grid container spacing={4}>
-                            {cards.map(card => (
-                                <Grid item key={card} xs={12} sm={6} md={4}>
-                                    <Card>
-                                        <CardMedia className="card-media"
-                                            image="http://www.personal.psu.edu/users/n/y/nys5290/Project-Image.jpg"
-                                            title="Image title"
-                                        />
-                                        <CardContent>
-                                            <Typography gutterBottom variant="h5" component="h2">
-                                                Project Title
-                                            </Typography>
-                                            <Typography>
-                                                Project description
-                                            </Typography>
-                                        </CardContent>
-                                        <CardActions>
-                                            <Button size="small" color="primary" onClick={() => this.setState({modalShow: true, data: card})}>
-                                                View
-                                            </Button>
-                                        </CardActions>
-                                    </Card>
-                                </Grid>
-                            ))}
-                        </Grid>
-                    </Container>
-                    <MyVerticallyCenteredModal
-                        show={this.state.modalShow}
-                        onHide={() => this.setState({modalShow: false})}
-                    />
-                </main>
-            </React.Fragment>
-        );
+                        <MyVerticallyCenteredModal
+                            show={this.state.modalShow}
+                            onHide={() => this.setState({ modalShow: false })}
+                        />
+                    </main>
+                </React.Fragment>
+            )
+        }
+        else {
+            return (
+                <React.Fragment>
+                    <CssBaseline />
+                    <main>
+                        <div className="hero-image">
+                            <Container className="hero-content" maxWidth="sm" >
+                                <p className="hero-text">The bridge connect students and non-profit organization</p>
+
+                            </Container>
+                        </div>
+                    </main>
+                </React.Fragment>
+            )
+        }
     }
 }
 
